@@ -13,12 +13,12 @@ public class Main {
         String s = sentence.toLowerCase().replaceAll(",", " ").replaceAll("’", " ");
         String words[] = s.split(" ");
 
-        for(int i = 0; i < words.length; i++){
-            if(words[i].contains("if")){
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].contains("if")) {
                 ConditionalIdentifier answer = new ConditionalIdentifier();
                 answer.identify(words);
                 break;
-            }else if ((words[i].contains("should") || words[i].contains("had") || words[i].contains("were")) && (!words[i].contains("if"))){
+            } else {
                 out.println("Inverted");
                 break;
             }
