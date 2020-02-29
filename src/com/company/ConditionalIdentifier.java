@@ -11,26 +11,25 @@ public class ConditionalIdentifier {
     int a = 0;
 
     public void identify(String words[]) {
-        d:for (int i = 0; i < words.length; i++) {
-            if (words[i].contains("had") && words[i].contains("have")) {
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].contains("had")) {
+                for (i = 0; i < words.length; i++) {
+                    if(words[i].contains("have")){
                 for (i = 0; i < words.length; i++) {
                     if (words[i].contains("would") || words[i].contains("should") || words[i].contains("must") || words[i].contains("could") || words[i].contains("might") || words[i].contains("may")) {
-                                //out.print("III");
-                                a = 3;
-                                break d;
+                        //out.print("III");
+                        a = 3;
 
-                            }
-
-                        }
-
+                    }
+                }
+            }
+        }
             } else if (words[i].contains("would") || words[i].contains("should") || words[i].contains("must") || words[i].contains("could") || words[i].contains("might") || words[i].contains("may")) {
                 //out.print("II");
                 a = 2;
-                break d;
             } else if (words[i].contains("will") || words[i].contains("ll")|| words[i].contains("should") || words[i].contains("can") || words[i].endsWith("ing") || words[i].contains("shall")) {
                 //out.print("I");
                 a = 1;
-                break d;
             }
         }
 
@@ -46,4 +45,3 @@ public class ConditionalIdentifier {
         }
     }
 }
-
