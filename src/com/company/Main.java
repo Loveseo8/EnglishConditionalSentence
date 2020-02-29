@@ -10,18 +10,20 @@ public class Main {
 
     public static void main(String[] args) {
         String sentence = in.nextLine();
-        String s = sentence.toLowerCase().replaceAll(",", " ").replaceAll("’", " ");
+        String s = sentence.toLowerCase().replaceAll(",", " ");
         String words[] = s.split(" ");
+        int b = 0;
 
         for (int i = 0; i < words.length; i++) {
-            if (words[i].contains("if")) {
+            if (words[i].contains("if") || words[i].contains("when")) {
                 ConditionalIdentifier answer = new ConditionalIdentifier();
                 answer.identify(words);
-                break;
-            } else {
-                out.println("Inverted");
-                break;
+            }else{
+                b += 1;
             }
+        }
+        if (b == 0){
+            out.print("Inverted");
         }
     }
 }
