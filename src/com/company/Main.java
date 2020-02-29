@@ -18,8 +18,7 @@ public class Main {
             if (words[i].contains("if") || words[i].contains("when")) {
                 ConditionalIdentifier answer = new ConditionalIdentifier();
                 answer.identify(words);
-            }else{
-                b += 1;
+                b = 1;
             }
         }
         if (b == 0){
